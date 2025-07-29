@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        Animal animal = new Michi("Gato con botas");
+        System.out.println(animal.toString());
+        animal.sonido();
+        System.out.println("nombre: " + animal.name);
+        animal.showMessage();
     }
 }
+
