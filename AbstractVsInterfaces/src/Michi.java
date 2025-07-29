@@ -1,4 +1,4 @@
-public class Michi extends Animal {
+public class Michi extends Animal implements Walk {
 
     //Sobrecarga de operadores (Overloading)
     Michi(String name ) {
@@ -25,5 +25,16 @@ public class Michi extends Animal {
 
     void parentMessage(){
         super.showMessage();
+    }
+
+    @Override
+    public void message() {
+        System.out.println("im near to run");
+    }
+
+    //tambien se puede hacer override de los default de interfaces
+    @Override
+    public void walk(){
+
     }
 }

@@ -7,22 +7,28 @@ public class Main {
          *         en Animal, osea que animal parentMessage no se llamaria
          */
 
-        Michi animal = new Michi("Gato con botas");
+        Michi michi = new Michi("Gato con botas");
 
         //devuelve posicion en memoria del objeto
-        System.out.println(animal.toString());
+        System.out.println(michi.toString());
 
         //devuelve la implementacion del metodo en Michi
-        animal.sonido();
+        michi.sonido();
 
 
-        System.out.println("nombre: " + animal.name);
+        System.out.println("nombre: " + michi.name);
 
         //se llama a la implmentacion en Michi
-        animal.showMessage();
+        michi.showMessage();
 
         //Se llama a la implementacion de Animal
-        animal.parentMessage();
+        michi.parentMessage();
+
+        //Interface
+        michi.walk();
+        michi.message();
+
+
     }
 }
 
