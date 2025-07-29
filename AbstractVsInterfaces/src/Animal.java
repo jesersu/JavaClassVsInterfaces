@@ -9,5 +9,7 @@ public abstract class Animal {
 
     protected void showMessage(){
         System.out.println("comen");
+
     }
+
 }
