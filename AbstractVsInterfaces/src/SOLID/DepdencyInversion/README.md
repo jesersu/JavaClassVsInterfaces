@@ -1,12 +1,12 @@
 
-# Liskov - soLid
+# Dependecy Inversion - soliD
 
-- Las subclases deben ser sustituibles por sus clases base.
-* Esto significa que, dado que la clase B es una subclase de la clase A, deberíamos poder pasar un objeto de la clase B a cualquier método que espere un objeto de la clase A y el método no debería dar ningún resultado extraño en ese caso.
+- Nos ayuda a podemos hacer que el código que es el núcleo de nuestra aplicación no dependa de los detalles de implementación.
+* Piensa en un control remoto: no depende de pilas específicas (AA, AAA), sino de la abstracción de «una fuente de energía». Así, puedes cambiar las pilas sin modificar el control.
+* Los módulos de alto nivel no deben depender de los de bajo nivel. Ambos deben depender de abstracciones
 ## Como detectar que estamos violando el principio Open Close?
 Darnos cuenta:
-* Creas una clase que extiende de otra, pero de repente uno de los métodos te sobra, y no sabes que hacer con él.
+*  Cualquier instanciación de clases complejas o módulos es una violación de este principio.
 * Las opciones más rápidas son bien dejarlo vacío, bien lanzar una excepción cuando se use, asegurándote de que nadie llama incorrectamente a un método que no se puede utilizar.
 * **Si un método sobrescrito no hace nada o lanza una excepción, es muy probable que estés violando el principio de sustitución de Liskov.**
 * Otra herramienta que te avisará fácilmente son los tests. Si los tests de la clase padre no funcionan para la hija, también estarás violando este principio.
-## 
