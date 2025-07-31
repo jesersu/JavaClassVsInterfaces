@@ -1,3 +1,5 @@
+import SOLID.Liskov.Cuadrado;
+import SOLID.Liskov.Rectangulo;
 import SOLID.OpenClose.CalculatorOfDiscount;
 import SOLID.OpenClose.Discount;
 import SOLID.OpenClose.RegularDiscount;
@@ -17,8 +19,21 @@ public class Main {
         Discount discount = new RegularDiscount();
         calculator.applyDiscount(discount, 100);
 
+        //Liskov sustitucion
+        Rectangulo rc = new Rectangulo(2, 3);
+        getAreaTest(rc);
+
+        Rectangulo sq = new Cuadrado();
+        sq.setAncho(5);
+        getAreaTest(sq);
+
     }
 
+    static void getAreaTest(Rectangulo r) {
+        int ancho = r.getAncho();
+        r.setAlto(10);
+        System.out.println("Area esperada de " + (ancho * 10) + ", tiene " + r.getArea());
+    }
     /**
      *         Animal animal = new Michi("Gato con botas");
      *         Se puede asignar Animal, pero no se podria llamar metodos o atributos que no esten
