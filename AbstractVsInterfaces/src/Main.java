@@ -1,3 +1,6 @@
+import SOLID.OpenClose.CalculatorOfDiscount;
+import SOLID.OpenClose.Discount;
+import SOLID.OpenClose.RegularDiscount;
 import SOLID.SingleResponsability.Employee;
 import SOLID.SingleResponsability.ReportEmployee;
 
@@ -8,6 +11,11 @@ public class Main {
         Employee e = new Employee("lupita",10000);
         ReportEmployee re = new ReportEmployee();
         System.out.println(re.generateReport(e));
+
+        //OPEN CLOSE
+        CalculatorOfDiscount calculator = new CalculatorOfDiscount();
+        Discount discount = new RegularDiscount();
+        calculator.applyDiscount(discount, 100);
 
     }
 
