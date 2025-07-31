@@ -1,3 +1,7 @@
+import SOLID.DepdencyInversion.DataBase;
+import SOLID.DepdencyInversion.MongoDB;
+import SOLID.DepdencyInversion.MySQL;
+import SOLID.DepdencyInversion.UserService;
 import SOLID.Liskov.Cuadrado;
 import SOLID.Liskov.Rectangulo;
 import SOLID.OpenClose.CalculatorOfDiscount;
@@ -6,7 +10,10 @@ import SOLID.OpenClose.RegularDiscount;
 import SOLID.SingleResponsability.Employee;
 import SOLID.SingleResponsability.ReportEmployee;
 
+import javax.xml.crypto.Data;
+
 public class Main {
+    //Interface Segregation
     public static void main(String[] args) {
         //TEST S in SOLID PRINCIPLES
         //Single Responsability
@@ -26,6 +33,12 @@ public class Main {
         Rectangulo sq = new Cuadrado();
         sq.setAncho(5);
         getAreaTest(sq);
+
+        //Dependency inversion
+        MySQL mySQL = new MySQL();
+        MongoDB mongoDB = new MongoDB();
+        UserService userService = new UserService(mySQL);
+        UserService userService2 = new UserService(mongoDB);
 
     }
 
